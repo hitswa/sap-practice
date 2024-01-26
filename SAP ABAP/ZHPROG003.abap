@@ -61,12 +61,12 @@ SKIP 2.
 *&-------------------------------------------------------*
 
 DATA    : lv_string10 TYPE STRING VALUE 'Hello World',
-          lv_ineger01 TYPE I.   " Integer to hold length of string
+          lv_integer01 TYPE I.   " Integer to hold length of string
 
-lv_ineger01 = STRLEN( lv_string10 ).
+lv_integer01 = STRLEN( lv_string10 ).
 
-WRITE   : / 'String for which we are trying to find length of: ', lv_ineger01,
-          / 'Length of string is: ', lv_ineger01.
+WRITE   : / 'String for which we are trying to find length of: ', lv_integer01,
+          / 'Length of string is: ', lv_integer01.
 
 ULINE.                  " this creates a horizontal line
 SKIP 2.
@@ -148,14 +148,25 @@ SKIP 2.
 *&  SHIFT
 *&-------------------------------------------------------*
 
+DATA    : lv_chatacter01(20) TYPE C VALUE '1234567890'.
 
-ULINE.                  " this creates a horizontal line
-SKIP 2.
+WRITE   : / 'Before shift: ', lv_chatacter01.   " OUTPUT: 1234567890
 
-*&-------------------------------------------------------*
-*&  MATCH OFFSET
-*&-------------------------------------------------------*
+SHIFT lv_chatacter01 LEFT BY 5 PLACES.
 
+WRITE   : / 'After left shift by 5 places: ', lv_chatacter01.   " OUTPUT: 67890_______________
+
+DATA    : lv_chatacter02(20) TYPE C VALUE '1234567890'.
+
+SHIFT lv_chatacter02 RIGHT BY 2 PLACES.
+
+WRITE   : / 'After right shift again by 2 places: ', lv_chatacter02.   " OUTPUT: __1234567890________
+
+DATA    : lv_chatacter03(20) TYPE C VALUE '1234567890'.
+
+SHIFT lv_chatacter03 CIRCULAR BY 2 PLACES.
+
+WRITE   : / 'After circular shift again by 2 places: ', lv_chatacter03.   " OUTPUT: 34567890__________12
 
 ULINE.                  " this creates a horizontal line
 SKIP 2.

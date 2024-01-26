@@ -39,11 +39,8 @@
   - STRLAN
   - TRANSLATE
   - FIND
-  - REPLACE
-  - SHIFT
-  - MATCH OFFSET
-  - FIRST OCCURRENCE
-  - ALL OCCURRENCE
+  - REPLACE - first and all occurrence
+  - SHIFT - left, right, circular
 
 ## HOW TO EXECUTE PROGRAMS?
 
